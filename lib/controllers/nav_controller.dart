@@ -12,7 +12,6 @@ class NavController extends GetxController {
     AppRoutes.profile,
   ];
 
-  /// Call this whenever route changes
   void updateIndexByRoute(String? route) {
     final index = routes.indexOf(route ?? '');
     if (index != -1) {
