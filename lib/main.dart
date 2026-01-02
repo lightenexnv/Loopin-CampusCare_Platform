@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       title: 'Campus App',
-      initialRoute: AppRoutes.home,
+      initialRoute: AppRoutes.auth,
       getPages: AppRoutes.pages,
     );
   }

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:loopin/screens/login.dart';
 import '../screens/home_screen.dart';
 import '../screens/report_screen.dart';
 import '../screens/community_screen.dart';
@@ -11,6 +12,7 @@ class AppRoutes {
   static const community = '/community';
   static const chat = '/chat';
   static const profile = '/profile';
+  static const auth = '/auth';
 
   static final pages = [
     GetPage(name: home, page: () => const HomeScreen()),
@@ -18,5 +20,7 @@ class AppRoutes {
     GetPage(name: community, page: () => const CommunityScreen()),
     GetPage(name: chat, page: () => const ChatScreen()),
     GetPage(name: profile, page: () => const ProfileScreen()),
+    GetPage(name: auth, page: () => const AuthScreen()),
+
   ];
 }
