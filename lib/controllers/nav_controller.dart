@@ -6,7 +6,7 @@ class NavController extends GetxController {
 
   final routes = [
     AppRoutes.home,
-    AppRoutes.report,
+    AppRoutes.resource,
     AppRoutes.community,
     AppRoutes.chat,
     AppRoutes.profile,

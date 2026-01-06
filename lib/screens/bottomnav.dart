@@ -22,7 +22,7 @@ class BottomNav extends StatelessWidget {
         onTap: controller.changeTab,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.report), label: "Report"),
+          BottomNavigationBarItem(icon: Icon(Icons.file_copy), label: "Resource"),
           BottomNavigationBarItem(icon: Icon(Icons.groups), label: "Community"),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),

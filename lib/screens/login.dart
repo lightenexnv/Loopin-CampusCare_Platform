@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loopin/screens/home_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -185,6 +186,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
                             print("Email: ${emailController.text}");
                             print("Password: ${passwordController.text}");
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                           }
                         },
                         style: ElevatedButton.styleFrom(
