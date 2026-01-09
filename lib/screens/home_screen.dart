@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:loopin/screens/bottomnav.dart';
-
 import '../controllers/nav_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,12 +11,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final nav = Get.find<NavController>();
     nav.updateIndexByRoute(Get.currentRoute);
+
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7FB),
       bottomNavigationBar: BottomNav(),
       body: Column(
         children: [
 
+          /// 🔹 HEADER (unchanged logic)
           Container(
             padding: const EdgeInsets.fromLTRB(16, 50, 16, 24),
             decoration: const BoxDecoration(
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.white.withAlpha(2),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Icon(Icons.shield_outlined, color: Colors.white),
+                  child: const Icon(Icons.school, color: Colors.white),
                 ),
                 const SizedBox(width: 12),
                 const Column(
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
-
+          /// 🔹 TOP CARD → STUDY MATERIALS
           Padding(
             padding: const EdgeInsets.all(16),
             child: Container(
@@ -80,18 +81,19 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     children: [
                       const CircleAvatar(
-                        backgroundColor: Color(0xFFE8F5E9),
-                        child: Icon(Icons.trending_up, color: Colors.green),
+                        backgroundColor: Color(0xFFE3F2FD),
+                        child: Icon(Icons.picture_as_pdf,
+                            color: Color(0xFF1E4BB8)),
                       ),
                       const SizedBox(width: 12),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           print("hello world");
                         },
                         child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Campus Issues",
+                            Text("Study Materials",
                                 style: TextStyle(color: Colors.grey)),
                             Text("This Week",
                                 style: TextStyle(
@@ -105,7 +107,7 @@ class HomeScreen extends StatelessWidget {
                     text: const TextSpan(
                       children: [
                         TextSpan(
-                          text: "0",
+                          text: "3",
                           style: TextStyle(
                             color: Colors.green,
                             fontSize: 22,
@@ -113,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: "/1 resolved",
+                          text: " new files",
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
@@ -124,7 +126,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
-
+          /// 🔹 QUICK ACTIONS
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Align(
@@ -138,20 +140,21 @@ class HomeScreen extends StatelessWidget {
 
           const SizedBox(height: 12),
 
+          /// ✅ Report Issue → Resources
           GestureDetector(
-            onTap: (){
+            onTap: () {
               print("hello world");
             },
             child: _actionTile(
-              icon: Icons.warning_amber_rounded,
-              title: "Report an Issue",
-              subtitle: "Submit campus problems",
-              iconBg: Color(0xFFFFF3E0),
+              icon: Icons.menu_book,
+              title: "Resources",
+              subtitle: "Study materials & PDFs",
+              iconBg: Color(0xFFE3F2FD),
             ),
           ),
 
           GestureDetector(
-            onTap: (){
+            onTap: () {
               print("hello world");
             },
             child: _actionTile(
@@ -163,7 +166,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           GestureDetector(
-            onTap: (){
+            onTap: () {
               print("hello world");
             },
             child: _actionTile(
@@ -174,20 +177,25 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
+          /// 🔹 RECENT RESOURCES
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text("Recent Campus Issues",
+                Text("Recent Resources",
                     style:
                     TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                 OutlinedButton(onPressed: null, child:  Text("View All",
-                     style: TextStyle(color: Color(0xFF1E4BB8))),)
+                OutlinedButton(
+                  onPressed: null,
+                  child: Text("View All",
+                      style: TextStyle(color: Color(0xFF1E4BB8))),
+                )
               ],
             ),
           ),
 
+          /// 🔹 RESOURCE CARD
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Container(
@@ -199,29 +207,28 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   const CircleAvatar(
-                    backgroundColor: Color(0xFFF1F3F6),
-                    child: Icon(Icons.build, color: Colors.grey),
+                    backgroundColor: Color(0xFFE3F2FD),
+                    child:
+                    Icon(Icons.description, color: Color(0xFF1E4BB8)),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                        Text("Water problem",
+                        Text("Data Structures Notes",
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         SizedBox(height: 4),
                         Row(
                           children: [
                             Chip(
-                              label: Text("reported",
+                              label: Text("PDF",
                                   style: TextStyle(fontSize: 12)),
-                              backgroundColor: Color(0xFFFFF3E0),
+                              backgroundColor: Color(0xFFE3F2FD),
                             ),
                             SizedBox(width: 8),
-                            Icon(Icons.people_outline, size: 16),
+                            Icon(Icons.schedule, size: 16),
                             SizedBox(width: 4),
-                            Text("1"),
-                            SizedBox(width: 8),
                             Text("35m ago",
                                 style: TextStyle(color: Colors.grey)),
                           ],
@@ -238,7 +245,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-
+  /// 🔹 Action Tile (unchanged)
   static Widget _actionTile({
     required IconData icon,
     required String title,
@@ -268,8 +275,8 @@ class HomeScreen extends StatelessWidget {
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 15)),
                   Text(subtitle,
-                      style:
-                      const TextStyle(color: Colors.grey, fontSize: 13)),
+                      style: const TextStyle(
+                          color: Colors.grey, fontSize: 13)),
                 ],
               ),
             ),
