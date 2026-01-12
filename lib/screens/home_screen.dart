@@ -88,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(width: 12),
                       GestureDetector(
                         onTap: () {
-                          print("hello world");
+                          nav.changeTab(1); // Resource tab
                         },
                         child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,7 +143,7 @@ class HomeScreen extends StatelessWidget {
           /// ✅ Report Issue → Resources
           GestureDetector(
             onTap: () {
-              print("hello world");
+              nav.changeTab(1); // Resource tab
             },
             child: _actionTile(
               icon: Icons.menu_book,
@@ -155,7 +155,7 @@ class HomeScreen extends StatelessWidget {
 
           GestureDetector(
             onTap: () {
-              print("hello world");
+              nav.changeTab(2); // Community tab
             },
             child: _actionTile(
               icon: Icons.groups_outlined,
@@ -167,7 +167,7 @@ class HomeScreen extends StatelessWidget {
 
           GestureDetector(
             onTap: () {
-              print("hello world");
+              nav.changeTab(3); // Chat tab
             },
             child: _actionTile(
               icon: Icons.chat_bubble_outline,
@@ -182,13 +182,15 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("Recent Resources",
+              children: [
+                const Text("Recent Resources",
                     style:
                     TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 OutlinedButton(
-                  onPressed: null,
-                  child: Text("View All",
+                  onPressed: () {
+                    nav.changeTab(1); // Resource tab
+                  },
+                  child: const Text("View All",
                       style: TextStyle(color: Color(0xFF1E4BB8))),
                 )
               ],

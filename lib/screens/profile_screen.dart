@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../screens/bottomnav.dart';
+import '../routes/routes.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -174,7 +176,9 @@ class ProfileScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 46,
                   child: OutlinedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offAllNamed(AppRoutes.auth);
+                    },
                     icon: const Icon(Icons.logout, color: Colors.red),
                     label: const Text(
                       "Sign Out",
