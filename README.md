@@ -78,12 +78,5 @@ This project leverages Google technologies as part of the solution:
 
 ---
 
-## 📎 Links
-- **GitHub Repository:** _(Add link here)_  
-- **Demo Video (3 mins):** _(Add link here)_  
-- **MVP Link (if deployed):** _(Add link here)_
-
----
-
 ## 📜 License
 This project is developed as part of a hackathon submission and is intended for educational and demonstration purposes.
